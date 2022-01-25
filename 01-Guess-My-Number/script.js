@@ -13,6 +13,9 @@ const generateSecretNumber = () => {
   return Math.trunc(Math.random() * 20) + 1;
 };
 
+const bodyBackground = document.querySelector('body').style.backgroundColor;
+const numberWidth = document.querySelector('.number').style.width;
+
 let secretNumber = generateSecretNumber();
 let score = 20;
 let highScore = 0;
@@ -27,8 +30,8 @@ document.querySelector('.check').addEventListener('click', () => {
   } else if (guess === secretNumber) {
     displayMessage('🎉 Correct Number!');
     displayNumber(secretNumber);
-    document.querySelector('body').style.backgroundColor = '#60b347';
-    document.querySelector('.number').style.width = '30rem';
+    bodyBackground = '#60b347';
+    numberWidth = '30rem';
 
     if (score > highScore) {
       highScore = score;
@@ -53,7 +56,7 @@ document.querySelector('.again').addEventListener('click', () => {
   displayMessage('Start guessing...');
   displayScore(score);
   displayNumber('?');
-  document.querySelector('.guess').value = '';
-  document.querySelector('body').style.backgroundColor = '#222';
-  document.querySelector('.number').style.width = '15rem';
+  guessValue = '';
+  bodyBackground = '#222';
+  dnumberWidth = '15rem';
 });
