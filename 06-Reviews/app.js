@@ -76,6 +76,6 @@ prevBtn.addEventListener("click", () => {
 });
 
 randomBtn.addEventListener("click", () => {
-  currentItem = Math.trunc(Math.random() * 4);
+  currentItem = Math.trunc(Math.random() * reviews.length);
   loadContent();
 });
